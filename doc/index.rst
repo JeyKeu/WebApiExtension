@@ -44,3 +44,21 @@ The easiest way to keep your suite updated is to use `Composer <http://getcompos
 
 Usage
 -----
+    .. code-block:: gherkin
+        Feature: List All Books
+            Given I send a GET request to "/books/"
+            Then the response code should be 200
+            And the response should countain json:
+            """
+            [
+                {
+                    "id":1,
+                    "title": "The Aweson Book",
+                    "issbn": "ISSBN-nnn",
+                    "author": "An Awesome Auther"
+                    "edition": "First Edition",
+                    "publisher": "An Awesome Publisher"
+                }
+            ]    
+            """"
+            
